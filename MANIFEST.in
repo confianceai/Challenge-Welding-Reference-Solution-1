@@ -1,0 +1,2 @@
+include challenge_solution/model_test.p
+include challenge_solution/model_test.weights.h5

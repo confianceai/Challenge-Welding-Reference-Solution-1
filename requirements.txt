@@ -1,0 +1,12 @@
+pandas==2.2.3
+onnxruntime==1.20.1
+minio
+tensorflow==2.16.1
+pillow
+setuptools
+opencv-python
+scikit-learn
+scipy
+pickleshare
+numpy         
+keras==3.8.0
