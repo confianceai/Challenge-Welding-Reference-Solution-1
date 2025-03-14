@@ -9,3 +9,4 @@ scipy==1.15.2
 pickleshare==0.7.5
 numpy==1.26.4         
 keras==3.8.0
+challenge_welding==0.1

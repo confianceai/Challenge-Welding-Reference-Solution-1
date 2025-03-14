@@ -3,7 +3,7 @@
 # Of course you are free to add any other methods you may need. This is the case here .
 
 from abc import ABC, abstractmethod
-from challenge_solution.absAIComponent import AbstractAIComponent
+from challenge_welding.AIComponent_interface import AbstractAIComponent
 import numpy as np
 
 # New version
