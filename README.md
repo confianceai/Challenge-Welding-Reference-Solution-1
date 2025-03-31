@@ -1,6 +1,6 @@
 # challenge-welding-reference-solution-1
 
-This repository contains the code of the reference solution proposed for the challenge Welding Quality detection.
+This repository contains the code of a naive reference solution proposed for the Welding Quality Detection challenge. This solution is provided as a pedagogical example only and should not be considered a benchmark in terms of performance.
 
 # Preparing your environnement
 
