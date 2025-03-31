@@ -84,12 +84,14 @@ class MyAIComponent(AbstractAIComponent):
     def set_full_model(self):
         self.full_model = Model(inputs=self.model.get_layer("input").input, outputs=[self.model.layers[-1].output,self.model.get_layer("latent_space").output])
             
-    def predict(self,input_images, images_meta_informations):
+    def predict(self,input_images, images_meta_informations, device='cpu'):
         """
-        Perform a prediction using the appropriate model.
+        Perform a prediction using the appropriate model.  
         Parameters:
             input_images: A list of NumPy arrays representing the list of images where you need to make predictions.
             image_meta_informations: List of Metadata dictionaries corresponding to metadata of input images
+        device: str
+            The device to run the model on. Can be 'cpu' or 'cuda'. Default is 'cpu'.
         Returns:
             A string prediction from ["OK", "KO", "UNKNOWN"].
         """
@@ -100,8 +102,15 @@ class MyAIComponent(AbstractAIComponent):
         else:
             X = input_images
 
-        # Model inference
-        logits,features = self.full_model.predict(X,verbose=False)
+        # Set the device for the inputs
+        if device == 'cuda' and tf.config.list_physical_devices('GPU'):
+            with tf.device('/GPU:0'):
+                logits, features = self.full_model.predict(X, verbose=False)
+        else:
+            with tf.device('/CPU:0'):
+                logits, features = self.full_model.predict(X, verbose=False)
+        
+
         # Uncertainty estimation
         probabilities = self.predict_uncertainty(logits)
         # Ood score computation
