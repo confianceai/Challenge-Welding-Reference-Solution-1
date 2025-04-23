@@ -59,7 +59,6 @@ class AbstractAIComponent(ABC):
                 predictions : A list of the predictions given by the AI component among 3 possible values [KO, OK UNKNOWN"]
                 probabilities : A list of 3-values lists containing predicted scores for each sample in this order [proba KO, proba OK, proba UNKNOWN]. sum of proba shall be 1 for each lists  
                 OOD_scores : A list of  OOD score predicted by the AI component for each sample. An ood score is a real positive number. The image is considered OOD when this score is >=1
-                explainabilities  : A list of explainabilities for each sample . An explainability is an intensity matrix (a numpy array contaning only real numbers between 0 and 1) representing the importance level of each pixel on input image in the decision leading to the final prediction of your AI component. 
         """
         pass
 
