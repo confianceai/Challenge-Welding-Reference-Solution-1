@@ -2,15 +2,8 @@
 This script is an example to show how to list available datasets, explore basic data properties, and load an image from the repository
 """
 import sys
-import subprocess
+import challenge_welding
 # sys.path.insert(0, "..") # Uncomment this line For local tests without pkg installation, to make challenge_welding module visible 
-
-#install challenge_solution from gir repository
-repo_url = "git+https://github.com/confianceai/Challenge-Welding-Starter-Kit.git"
-requirements_url = "https://raw.githubusercontent.com/confianceai/Challenge-Welding-Starter-Kit/refs/heads/main/requirements.txt"
-
-subprocess.run([sys.executable, "-m", "pip", "install", repo_url])
-subprocess.run([sys.executable, "-m", "pip", "install", "-r", requirements_url])
 
 from challenge_welding.user_interface import ChallengeUI
 

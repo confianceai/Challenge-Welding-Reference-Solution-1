@@ -10,3 +10,8 @@ pickleshare==0.7.5
 numpy==1.26.4         
 keras==3.8.0
 torch==2.6.0
+challenge-welding==1.0
+pyaml==25.1.0
+matplotlib==3.10.0
+tqdm==4.67.0
+pyarrow==19.0.0
